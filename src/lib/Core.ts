@@ -2,7 +2,7 @@ import { validPath, parseLocation, parseQuery, getFullPath } from "./Util";
 import { routes, Route, getRoutes } from "./Route";
 
 if (typeof window === "undefined") {
-  throw new Error("simy can usable in browsers.");
+  throw new Error("Simy can only be used in browsers.");
 }
 
 export let Options: ({
@@ -17,7 +17,7 @@ export let Options: ({
 
 export const setOptions = ((options: typeof Options): void => {
   if (!options.pagesObject) {
-    throw new Error("options parameter must be include pagesObject.");
+    throw new Error("'options' parameter must include pagesObject.");
   }
 
   Options = options;
