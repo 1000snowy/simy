@@ -1,6 +1,9 @@
+import { SimyLocation } from "./Util";
+
 export interface Route {
   path: string;
-  file: string;
+  file?: ((location: SimyLocation) => string);
+  redirect?: ((location: SimyLocation, route: Route) => string);
   filter?: (() => (boolean | Promise<boolean>));
   data?: ({
     [key: string]: any;
